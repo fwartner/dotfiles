@@ -16,9 +16,18 @@ brew bundle
 rm -rf $HOME/.zshrc
 ln -s $HOME/.dotfiles/.zshrc $HOME/.zshrc
 
+rm  $HOME/.oh-my-zsh/custom/*.zsh
+cp /zsh_custom/*.zsh $HOME/.oh-my-zsh/custom/
+
 git clone https://github.com/spaceship-prompt/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1
 ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
 
 ln -s $HOME/.dotfiles/config/.mackup.cfg $HOME/.mackup.cfg
 
 ./ssh.sh
+
+mkdir $HOME/Development
+mkdir $HOME/Development/Sites
+mkdir $HOME/Development/Projects
+
+mackup restore
