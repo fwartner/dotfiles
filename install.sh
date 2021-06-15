@@ -11,7 +11,7 @@ fi
 brew update
 
 brew tap homebrew/bundle
-brew bundle
+brew bundle --file=~/.dotfiles/Brewfile
 
 rm -rf $HOME/.zshrc
 ln -s $HOME/.dotfiles/.zshrc $HOME/.zshrc
