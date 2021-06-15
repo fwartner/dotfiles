@@ -1,0 +1,19 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+  workflow_dispatch:
+
+jobs:
+  test-on-system:
+    runs-on: macos-11.0
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Run installer
+        run: ./install.sh
