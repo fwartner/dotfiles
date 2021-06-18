@@ -19,6 +19,5 @@ jobs:
 
       - name: Prepare
         run: |
-          cd dotfiles,
           chmod +x install.sh,
           ./install.sh
