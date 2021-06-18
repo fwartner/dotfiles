@@ -17,8 +17,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Clone Repository
+        run: git clone https://github.com/fwartner/dotfiles.git ~/.dotfiles
+
       - name: Prepare
-        run: chmod +x install.sh
+        run: chmod +x ~/.dotfiles/install.sh
 
       - name: Install
-        run: ./install.sh
+        run: ./~/.dotfiles/install.sh
