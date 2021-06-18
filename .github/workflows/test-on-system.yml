@@ -19,5 +19,5 @@ jobs:
 
       - name: Prepare
         run: |
-          chmod +x install.sh,
-          ./install.sh
+          chmod +x ${GITHUB_WORKSPACE} install.sh,
+          ${GITHUB_WORKSPACE} ./install.sh
