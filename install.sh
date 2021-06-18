@@ -24,8 +24,6 @@ ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/the
 
 ln -s $HOME/.dotfiles/config/.mackup.cfg $HOME/.mackup.cfg
 
-./ssh.sh
-
 mkdir $HOME/Development
 mkdir $HOME/Development/Sites
 mkdir $HOME/Development/Projects
