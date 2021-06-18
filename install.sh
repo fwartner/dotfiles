@@ -29,5 +29,3 @@ ln -s $HOME/.dotfiles/config/.mackup.cfg $HOME/.mackup.cfg
 mkdir $HOME/Development
 mkdir $HOME/Development/Sites
 mkdir $HOME/Development/Projects
-
-mackup restore
