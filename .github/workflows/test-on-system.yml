@@ -21,7 +21,13 @@ jobs:
         run: git clone https://github.com/fwartner/dotfiles.git ~/.dotfiles
 
       - name: Prepare
-        run: chmod +x ~/.dotfiles/install.sh
+        run: |
+          chmod +x ~/.dotfiles/install.sh,
+          chmod +x ~/.dotfiles/laravel.sh,
+          chmod +x ~/.dotfiles/folders.sh,
+          chmod +x ~/.dotfiles/mysql.sh,
+          chmod +x ~/.dotfiles/ssh.sh,
+          chmod +x ~/.dotfiles/extra.sh
 
       - name: Install
         run: ~/.dotfiles/install.sh
