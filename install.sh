@@ -22,8 +22,7 @@ cp ~/.dotfiles/zsh_custom/*.zsh $HOME/.oh-my-zsh/custom/
 git clone https://github.com/spaceship-prompt/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1
 ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
 
-ln -s $HOME/.dotfiles/config/.mackup.cfg $HOME/.mackup.cfg
-
-mkdir $HOME/Development
-mkdir $HOME/Development/Sites
-mkdir $HOME/Development/Projects
+./extra.sh
+./folders.sh
+./laravel.sh
+./mysql.sh
