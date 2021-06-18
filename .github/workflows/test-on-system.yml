@@ -11,7 +11,7 @@ on:
     branches: [ main ]
 
 jobs:
-  install:
+  test:
     runs-on: macos-latest
 
     steps:
@@ -19,12 +19,6 @@ jobs:
 
       - name: Prepare
         run: |
-          git clone https://github.com/fwartner/dotfiles.git,
           cd dotfiles,
-          chmod +x ssh.sh,
-          ./ssh.sh
-
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+          chmod +x install.sh,
+          ./install.sh
