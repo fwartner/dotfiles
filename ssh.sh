@@ -3,7 +3,7 @@
 echo "Generating a new SSH key for GitHub..."
 
 
-ssh-keygen -t ed25519 -C "florian@wartner.io"
+ssh-keygen -t ed25519 -C $1 -f ~/.ssh/id_ed25519
 
 # Adding your SSH key to the ssh-agent
 # https://docs.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#adding-your-ssh-key-to-the-ssh-agent
