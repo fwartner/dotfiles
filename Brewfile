@@ -51,7 +51,6 @@ brew "subversion"
 
 # Utilities
 brew "trash"
-brew "mackup"
 brew "mas"
 brew "httpie"
 
