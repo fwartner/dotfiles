@@ -125,15 +125,28 @@ step_oh_my_zsh() {
   say "oh-my-zsh"
   if [ -d "$HOME/.oh-my-zsh" ]; then
     ok "already installed"
-    return
+  else
+    if [ "$DRY_RUN" -eq 1 ]; then
+      printf '  [dry-run] install oh-my-zsh\n'
+    else
+      RUNZSH=no CHSH=no sh -c \
+        "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" \
+        "" --unattended
+    fi
   fi
-  if [ "$DRY_RUN" -eq 1 ]; then
-    printf '  [dry-run] sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended\n'
-    return
+
+  # Remove OMZ's stock example files so stow/oh-my-zsh can take over custom/ cleanly
+  local omz_custom="$HOME/.oh-my-zsh/custom"
+  if [ -d "$omz_custom" ]; then
+    for stock in "$omz_custom/example.zsh" "$omz_custom/themes/example.zsh-theme"; do
+      if [ -f "$stock" ] && [ ! -L "$stock" ]; then
+        run rm -f "$stock"
+      fi
+    done
+    if [ -d "$omz_custom/plugins/example" ] && [ ! -L "$omz_custom/plugins/example" ]; then
+      run rm -rf "$omz_custom/plugins/example"
+    fi
   fi
-  RUNZSH=no CHSH=no sh -c \
-    "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" \
-    "" --unattended
 }
 
 step_stow() {

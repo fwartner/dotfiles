@@ -48,6 +48,7 @@ That's it. The script is idempotent — re-running on a provisioned machine is s
     ├── claude/.config/Claude/
     ├── git/.config/git/    # global gitignore
     ├── git/.gitconfig
+    ├── oh-my-zsh/.oh-my-zsh/custom/{plugins,themes}/  # drop-in OMZ custom plugins & themes
     ├── tfenv/.config/tfenv/
     └── zsh/
         ├── .zprofile
