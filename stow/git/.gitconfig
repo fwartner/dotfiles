@@ -1,0 +1,5 @@
+[user]
+	name = Florian Wartner
+	email = florian@wartner.io
+[init]
+	defaultBranch = main
