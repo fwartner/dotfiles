@@ -115,13 +115,66 @@ Deferred. Acknowledged but not in current scope.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| (Populated by roadmapper) | | |
+| PKG-01 | Phase 1 | Pending |
+| PKG-02 | Phase 1 | Pending |
+| PKG-03 | Phase 1 | Pending |
+| PKG-04 | Phase 1 | Pending |
+| PKG-05 | Phase 4 | Pending |
+| SHELL-01 | Phase 1 | Pending |
+| SHELL-02 | Phase 2 | Pending |
+| SHELL-03 | Phase 1 | Pending |
+| SHELL-04 | Phase 4 | Pending |
+| SHELL-05 | Phase 2 | Pending |
+| SHELL-06 | Phase 2 | Pending |
+| GIT-01 | Phase 1 | Pending |
+| GIT-02 | Phase 1 | Pending |
+| CFG-01 | Phase 1 | Pending |
+| CFG-02 | Phase 1 | Pending |
+| CFG-03 | Phase 1 | Pending |
+| CFG-04 | Phase 1 | Pending |
+| CFG-05 | Phase 1 | Pending |
+| CFG-06 | Phase 2 | Pending |
+| MAC-01 | Phase 3 | Pending |
+| MAC-02 | Phase 3 | Pending |
+| MAC-03 | Phase 3 | Pending |
+| MAC-04 | Phase 3 | Pending |
+| MAC-05 | Phase 3 | Pending |
+| MAC-06 | Phase 3 | Pending |
+| MAC-07 | Phase 3 | Pending |
+| STOW-01 | Phase 3 | Pending |
+| STOW-02 | Phase 3 | Pending |
+| STOW-03 | Phase 3 | Pending |
+| STOW-04 | Phase 3 | Pending |
+| INST-01 | Phase 4 | Pending |
+| INST-02 | Phase 4 | Pending |
+| INST-03 | Phase 4 | Pending |
+| INST-04 | Phase 4 | Pending |
+| INST-05 | Phase 4 | Pending |
+| INST-06 | Phase 4 | Pending |
+| INST-07 | Phase 4 | Pending |
+| INST-08 | Phase 4 | Pending |
+| INST-09 | Phase 4 | Pending |
+| INST-10 | Phase 4 | Pending |
+| INST-11 | Phase 4 | Pending |
+| INST-12 | Phase 4 | Pending |
+| INST-13 | Phase 4 | Pending |
+| PUB-01 | Phase 2 | Pending |
+| PUB-02 | Phase 2 | Pending |
+| PUB-03 | Phase 2 | Pending |
+| PUB-04 | Phase 2 | Pending |
+| PUB-05 | Phase 2 | Pending |
+| DOC-01 | Phase 4 | Pending |
+| DOC-02 | Phase 4 | Pending |
+| DOC-03 | Phase 4 | Pending |
+| DOC-04 | Phase 4 | Pending |
+| DOC-05 | Phase 4 | Pending |
+| DOC-06 | Phase 4 | Pending |
 
 **Coverage:**
 - v1 requirements: 47 total
-- Mapped to phases: (pending roadmap)
-- Unmapped: (pending roadmap)
+- Mapped to phases: 47 (100%)
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-04-22*
-*Last updated: 2026-04-22 after initial definition*
+*Last updated: 2026-04-22 — traceability populated by roadmapper*
