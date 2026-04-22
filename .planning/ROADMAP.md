@@ -14,7 +14,7 @@ Running `./install.sh` on a fresh macOS install produces a fully working develop
 
 - [x] **Phase 1: Capture** - Snapshot the current Mac (Brewfile, mas list, shell, git, tool configs) into the repo (completed 2026-04-22)
 - [x] **Phase 2: Sanitize & Safety Net** - Strip secrets and P&P identity, add `.env.example`, `.gitignore`, secret-scan script (completed 2026-04-22)
-- [ ] **Phase 3: macOS Defaults & Stow Layout** - Curated `defaults.sh` and finalized GNU stow module structure
+- [x] **Phase 3: macOS Defaults & Stow Layout** - Curated `defaults.sh` and finalized GNU stow module structure (completed 2026-04-22)
 - [ ] **Phase 4: Install Script & Documentation** - Bash `install.sh`, README, LICENSE, post-install checklist, fresh-machine verification
 
 ## Phase Details
@@ -77,7 +77,7 @@ Running `./install.sh` on a fresh macOS install produces a fully working develop
 |-------|----------------|--------|-----------|
 | 1. Capture | 3/3 | Complete    | 2026-04-22 |
 | 2. Sanitize & Safety Net | 1/1 | Complete    | 2026-04-22 |
-| 3. macOS Defaults & Stow Layout | 0/TBD | Not started | - |
+| 3. macOS Defaults & Stow Layout | 1/0 | Complete    | 2026-04-22 |
 | 4. Install Script & Documentation | 0/TBD | Not started | - |
 
 ## Coverage Map
