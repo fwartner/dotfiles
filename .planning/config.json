@@ -17,7 +17,7 @@
     "plan_check": false,
     "verifier": true,
     "nyquist_validation": false,
-    "auto_advance": false,
+    "auto_advance": true,
     "node_repair": true,
     "node_repair_budget": 2,
     "ui_phase": true,
@@ -27,7 +27,9 @@
     "discuss_mode": "discuss",
     "skip_discuss": false,
     "code_review": true,
-    "code_review_depth": "standard"
+    "code_review_depth": "standard",
+    "_auto_chain_active": true,
+    "use_worktrees": false
   },
   "hooks": {
     "context_warnings": true

@@ -2,13 +2,14 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: executing
-last_updated: "2026-04-22T13:26:47.809Z"
+status: planning
+last_updated: "2026-04-22T13:35:19.808Z"
 progress:
   total_phases: 4
-  completed_phases: 0
-  total_plans: 0
-  completed_plans: 0
+  completed_phases: 1
+  total_plans: 3
+  completed_plans: 3
+  percent: 100
 ---
 
 # State: dotfiles
@@ -19,14 +20,17 @@ progress:
 
 **Core Value:** Running `./install.sh` on a fresh macOS install produces a fully working development environment without manual intervention.
 
-**Current Focus:** Roadmap created. Awaiting first phase plan.
+**Current Focus:** Phase 01 — capture
 
 ## Current Position
 
+Phase: 01 (capture) — EXECUTING
+Plan: 1 of 3
+
 - **Milestone:** v1
-- **Phase:** Not yet started (next: Phase 1 — Capture)
-- **Plan:** None yet
-- **Status:** Ready to execute
+- **Phase:** 2
+- **Plan:** Not started
+- **Status:** Ready to plan
 
 **Progress:** `[----] 0/4 phases complete`
 
