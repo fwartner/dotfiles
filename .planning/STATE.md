@@ -1,3 +1,16 @@
+---
+gsd_state_version: 1.0
+milestone: v1.0
+milestone_name: milestone
+status: executing
+last_updated: "2026-04-22T13:26:47.809Z"
+progress:
+  total_phases: 4
+  completed_phases: 0
+  total_plans: 0
+  completed_plans: 0
+---
+
 # State: dotfiles
 
 **Last Updated:** 2026-04-22
@@ -13,7 +26,7 @@
 - **Milestone:** v1
 - **Phase:** Not yet started (next: Phase 1 — Capture)
 - **Plan:** None yet
-- **Status:** Ready for `/gsd-plan-phase 1`
+- **Status:** Ready to execute
 
 **Progress:** `[----] 0/4 phases complete`
 
