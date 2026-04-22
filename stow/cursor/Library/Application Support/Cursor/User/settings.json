@@ -1,0 +1,25 @@
+{
+  "window.commandCenter": true,
+  "makefile.configureOnOpen": true,
+  "git.enableSmartCommit": true,
+  "git.confirmSync": false,
+  "git.autofetch": true,
+  "redhat.telemetry.enabled": true,
+  "vs-kubernetes": {
+    "vs-kubernetes.minikube-show-information-expiration": "2026-09-05T13:47:55.847Z",
+    "vs-kubernetes.crd-code-completion": "enabled",
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+  "git.openRepositoryInParentFolders": "never",
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+  "remote.SSH.remotePlatform": {
+    "macmini": "macOS"
+  },
+  "editor.accessibilitySupport": "on",
+  "git.ignoreRebaseWarning": true,
+  "security.promptForLocalFileProtocolHandling": false,
+}

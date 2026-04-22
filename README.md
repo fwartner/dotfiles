@@ -45,14 +45,22 @@ That's it. The script is idempotent — re-running on a provisioned machine is s
 │   ├── stow-all.sh         # stow/unstow/restow/dry-run wrapper
 │   └── scan-secrets.sh     # secret detection (12 patterns)
 └── stow/                   # GNU stow modules — each mirrors $HOME layout
-    ├── claude/.config/Claude/
-    ├── git/.config/git/    # global gitignore
+    ├── claude/.config/Claude/                 # Claude Desktop MCP config
+    ├── claude-code/.claude/settings.json      # Claude Code (CLI) hooks, env, permissions
+    ├── containers/.config/containers/         # podman containers.conf
+    ├── cursor/Library/Application Support/Cursor/User/settings.json
+    ├── flutter/.config/flutter/               # tool_state
+    ├── gh/.config/gh/config.yml               # GitHub CLI prefs (no token; hosts.yml excluded)
+    ├── git/.config/git/ignore                 # global gitignore
     ├── git/.gitconfig
-    ├── oh-my-zsh/.oh-my-zsh/custom/{plugins,themes}/  # drop-in OMZ custom plugins & themes
-    ├── tfenv/.config/tfenv/
+    ├── iterm2/Library/Preferences/com.googlecode.iterm2.plist
+    ├── oh-my-zsh/.oh-my-zsh/custom/{plugins,themes}/
+    ├── prjct/.config/prjct/config.yaml        # personal project templates
+    ├── tfenv/.config/tfenv/version
     └── zsh/
         ├── .zprofile
         ├── .zshrc
+        ├── .iterm2_shell_integration.zsh
         └── .zsh.d/         # aliases, exports, functions, laravel, docker, flutter, k8s, infra
 ```
 
@@ -107,13 +115,26 @@ After `install.sh` finishes, the script prints these manually-required steps:
 
 ## What's intentionally NOT in this repo
 
-- SSH and GPG **private keys** — never committed, even in private repos
-- Active session credentials (`~/.config/gcloud`, `~/.config/hcloud`, gh tokens)
-- iTerm2 binary `.plist` (machine-specific UUIDs; use iTerm2's custom-folder sync instead)
-- Heavy app data (Herd config, lmstudio/ollama models, `~/Library/Application Support/*`)
+**Secrets:**
+- SSH and GPG **private keys**
+- `~/.aws/credentials`, `~/.config/gcloud/`, `~/.config/hcloud/cli.toml` — live tokens
+- `~/.config/gh/hosts.yml` — has the GitHub OAuth token (only `config.yml` is captured)
+- `~/.config/gws/client_secret.json` — Google OAuth client secret
+- `~/.config/stripe/config.toml` — live Stripe API keys
+- `.env`, `.env.local`, `~/.env.local` — runtime secrets (use `.env.example` as a template)
+
+**Heavy app data / runtime state:**
+- Herd config, lmstudio/ollama models, podman VM disks
+- `~/.config/configstore/` — npm tool runtime state (regenerated)
+- `~/.config/psysh/`, `~/.config/cagent/`, `~/.config/patrol_cli/`, `~/.config/companies.sh/` — machine-specific UUIDs / first-run flags
+- Cursor/VSCode `globalStorage`, `workspaceStorage`, `History` — per-machine state
+- Shell history, log files, `.DS_Store`, `.zcompdump-*`
+
+**Other:**
+- Pixel & Process tooling, agents, identity (user directive)
 - `~/Projects` source code (tracked in their own remotes)
 - Browser profiles and extensions (browser sync handles these)
-- Full `defaults export` dumps (brittle, noisy, unreviewable — `macos/defaults.sh` is a curated subset)
+- Full `defaults export` dumps (brittle; `macos/defaults.sh` is a curated subset)
 
 ## License
 

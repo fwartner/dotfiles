@@ -1,0 +1,37 @@
+# prjct configuration file
+# Docs: https://github.com/fwartner/prjct
+
+templates:
+  - id: video
+    name: "Video Production"
+    base_path: "~/Projects/Video"
+    directories:
+      - name: "RAW"
+      - name: "Selects"
+      - name: "Edits"
+      - name: "Export"
+
+  - id: drone-photo
+    name: "Drone Photography"
+    base_path: "~/Projects/Drone Photography"
+    directories:
+      - name: "RAW"
+      - name: "Selects"
+      - name: "Edits"
+      - name: "Export"
+
+  - id: drone-video
+    name: "Drone Video"
+    base_path: "~/Projects/Video/Drone Video"
+    directories:
+      - name: "RAW"
+      - name: "Selects"
+      - name: "Edits"
+      - name: "Export"
+
+  - id: dev
+    name: "Software Development"
+    base_path: "~/Projects/Development"
+    directories:
+      - name: "Docs"
+      - name: "Source Code"
