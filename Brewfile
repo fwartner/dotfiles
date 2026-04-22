@@ -347,7 +347,6 @@ mas "SSH Config Editor", id: 1109319285
 mas "Telegram", id: 747648890
 mas "WireGuard", id: 1451685025
 mas "Xcode", id: 497799835
-vscode "anysphere.remote-ssh"
 vscode "arcticicestudio.nord-visual-studio-code"
 vscode "bierner.markdown-mermaid"
 vscode "christian-kohler.npm-intellisense"
