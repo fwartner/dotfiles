@@ -1,6 +1,9 @@
 # All export statements — no aliases, functions, or source calls.
 # Source this first so PATH and env vars are available to other config.
 
+# Load machine-local secrets if present (gitignored)
+[[ -f "$HOME/.env.local" ]] && source "$HOME/.env.local"
+
 # Oh My Zsh
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -16,9 +19,9 @@ export NVM_DIR="$HOME/Library/Application Support/Herd/config/nvm"
 export PATH="$HOME/Library/Application Support/Herd/bin/:$PATH"
 export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
 
-# Fastlane (consider not committing secrets to a public repo)
-export FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD="jnjx-xtxh-rwnd-kqkp"
-export FASTLANE_USER="florian@pixelandprocess.de"
+# Fastlane — values come from ~/.env.local, see .env.example
+export FASTLANE_USER="${FASTLANE_USER:-}"
+export FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD="${FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD:-}"
 
 # Editor (used by zshconfig, git, etc.)
 export EDITOR="${EDITOR:-nano}"

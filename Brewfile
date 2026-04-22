@@ -248,8 +248,6 @@ brew "antoniorodr/memo/memo"
 brew "charmbracelet/tap/crush"
 # Utility to export your existing Cloudflare resources as Terraform resources
 brew "cloudflare/cloudflare/cf-terraforming"
-# Pixel & Process Kubernetes deployment manager
-brew "fwartner/tap/pnp"
 # Create project directory structures from YAML templates
 brew "fwartner/tap/prjct"
 # The Sentry Wizard helps you set up your projects with Sentry
@@ -360,7 +358,6 @@ vscode "github.vscode-github-actions"
 vscode "golang.go"
 vscode "hashicorp.hcl"
 vscode "hashicorp.terraform"
-vscode "highagency.pencildev"
 vscode "motion.motion-vscode-extension"
 vscode "ms-azuretools.vscode-containers"
 vscode "ms-azuretools.vscode-docker"

@@ -1,0 +1,41 @@
+# Local secrets
+.env
+.env.local
+*.env.local
+
+# SSH / GPG / TLS
+id_rsa
+id_rsa.*
+id_ed25519
+id_ed25519.*
+*.pem
+*.key
+*.p12
+*.pfx
+known_hosts
+authorized_keys
+
+# Shell history
+.zsh_history
+.bash_history
+.python_history
+.psql_history
+.node_repl_history
+.wget-hsts
+
+# OS
+.DS_Store
+Thumbs.db
+ehthumbs.db
+
+# Editor
+*.swp
+*.swo
+.idea/
+.vscode/
+
+# Stow conflict backups
+*.stow-orig
+
+# Local install marker
+.installed
