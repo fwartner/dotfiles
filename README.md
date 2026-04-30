@@ -39,6 +39,8 @@ That's it. The script is idempotent — re-running on a provisioned machine is s
 ├── Makefile                # convenience targets
 ├── .env.example            # template for ~/.env.local (secrets)
 ├── .gitignore              # blocks secrets, history, OS junk
+├── iterm2/
+│   └── com.googlecode.iterm2.plist  # canonical iTerm2 prefs (NOT stowed; see note below)
 ├── macos/
 │   └── defaults.sh         # curated macOS defaults
 ├── scripts/
@@ -53,7 +55,6 @@ That's it. The script is idempotent — re-running on a provisioned machine is s
     ├── gh/.config/gh/config.yml               # GitHub CLI prefs (no token; hosts.yml excluded)
     ├── git/.config/git/ignore                 # global gitignore
     ├── git/.gitconfig
-    ├── iterm2/Library/Preferences/com.googlecode.iterm2.plist
     ├── oh-my-zsh/.oh-my-zsh/custom/{plugins,themes}/
     ├── prjct/.config/prjct/config.yaml        # personal project templates
     ├── tfenv/.config/tfenv/version
@@ -65,6 +66,8 @@ That's it. The script is idempotent — re-running on a provisioned machine is s
 ```
 
 Each `stow/<module>/` mirrors what its target should look like under `$HOME`. Stowing `stow/zsh` symlinks `~/.zshrc`, `~/.zprofile`, and `~/.zsh.d/*.zsh` back into the repo.
+
+**Why `iterm2/` lives outside `stow/`:** macOS 14+ `cfprefsd` refuses to read or write symlinked plists in `~/Library/Preferences/`, so a stowed iTerm2 plist silently loses every setting change. Instead, `install.sh` writes a small *real* plist locally that points iTerm2 at `iterm2/com.googlecode.iterm2.plist` via its built-in "Load preferences from a custom folder" feature. iTerm2 then reads/writes the canonical file directly, bypassing `cfprefsd`.
 
 ## Common tasks
 
@@ -110,8 +113,7 @@ After `install.sh` finishes, the script prints these manually-required steps:
 2. **Populate `~/.env.local`** from `.env.example`
 3. **Import SSH keys** from your secure backup into `~/.ssh/` (chmod 700 the dir, 600 the keys)
 4. **Import GPG keys** if you sign commits
-5. **iTerm2 prefs**: open iTerm2 → Settings → General → Preferences → "Load preferences from a custom folder", point at wherever you sync the `com.googlecode.iterm2.plist`
-6. **Restart your shell**: `exec zsh -l`
+5. **Restart your shell**: `exec zsh -l`
 
 ## What's intentionally NOT in this repo
 

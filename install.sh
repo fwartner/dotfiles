@@ -207,6 +207,45 @@ step_macos_defaults() {
   bash "$ROOT/macos/defaults.sh"
 }
 
+step_iterm2_prefs() {
+  # macOS 14+ cfprefsd refuses to read/write symlinked plists in ~/Library/Preferences,
+  # so iTerm2's prefs can't be stowed. Instead: keep the canonical plist in $ROOT/iterm2/
+  # and write a small *real* pointer plist locally that tells iTerm2 to load from there.
+  say "iTerm2 preferences (custom-folder pointer)"
+  local canonical="$ROOT/iterm2/com.googlecode.iterm2.plist"
+  local folder="$ROOT/iterm2"
+  local local_plist="$HOME/Library/Preferences/com.googlecode.iterm2.plist"
+
+  if [ ! -f "$canonical" ]; then
+    warn "no canonical plist at $canonical — skipping"
+    return
+  fi
+
+  if pgrep -fq "iTerm.app/Contents/MacOS/iTerm2"; then
+    warn "iTerm2 is running — quit it (Cmd+Q) and re-run this step, or skip"
+    return
+  fi
+
+  if [ "$DRY_RUN" -eq 1 ]; then
+    printf '  [dry-run] point local plist at %s via defaults write\n' "$folder"
+    return
+  fi
+
+  # If a previous (broken) symlink exists, drop it so cfprefsd creates a real file.
+  if [ -L "$local_plist" ]; then
+    run rm "$local_plist"
+  fi
+  killall cfprefsd 2>/dev/null || true
+  sleep 1
+
+  defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
+  defaults write com.googlecode.iterm2 PrefsCustomFolder -string "$folder"
+  defaults write com.googlecode.iterm2 NoSyncNeverRemindPrefsChangesLost -bool true
+  defaults write com.googlecode.iterm2 NoSyncNeverRemindPrefsChangesLostForFile -bool true
+  defaults write com.googlecode.iterm2 NoSyncNeverRemindPrefsChangesCopyToFile -bool true
+  ok "pointer plist written → $folder"
+}
+
 step_postflight() {
   say "Post-install checklist"
   cat <<'EOF'
@@ -226,11 +265,8 @@ Manual steps that this script can't (or shouldn't) automate:
   4. Import GPG keys (if you sign commits):
        gpg --import path/to/private.key
 
-  5. iTerm2 preferences (optional):
-       Settings → General → Preferences → Load preferences from a custom folder
-       Point at: <somewhere you sync, e.g. iCloud Drive>
+  5. Restart your shell so the new zsh + stowed config kick in:
 
-  6. Restart your shell so the new zsh + stowed config kick in:
        exec zsh -l
 
 EOF
@@ -252,6 +288,7 @@ step_oh_my_zsh
 step_stow
 step_default_shell
 step_macos_defaults
+step_iterm2_prefs
 step_postflight
 
 say "Done."
